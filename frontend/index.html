@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="icon" type="image/png" href="favicon.ico">
   <head>
-    <title>binauralbeats</title>
+    <title>binauralfocus</title>
     <style>
 	
 	  body {
@@ -41,7 +42,7 @@
 	  
 	  div.timer {
 		margin-top: 5%;
-		margin-left: 30%;
+		margin-left: 32%;
 		font-size: 50px;
 	  }
 	  
@@ -112,9 +113,14 @@
 		document.getElementById("controlbar").style.display = "block";
 		document.getElementById("stopbar").style.display = "none";
 		document.getElementById("countdownWrapper").style.visibility = "hidden";
-		this.gain.gain.exponentialRampToValueAtTime(this.volume / 2, context.currentTime + 1);
-		this.gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 2);
 		clearInterval(this.timerId);
+		this.gain.gain.exponentialRampToValueAtTime(this.volume / 1.05, context.currentTime + 0.3);
+		await delay(300);
+		this.gain.gain.exponentialRampToValueAtTime(this.volume / 1.5, context.currentTime + 0.3);
+		await delay(300);
+		this.gain.gain.exponentialRampToValueAtTime(this.volume / 2, context.currentTime + 0.4);
+		await delay(400);
+		this.gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + 2);
 		await delay(2000);
 		this.osc1.stop();
 		this.osc2.stop();
@@ -157,7 +163,10 @@
 	  
 	  function timer(mins) {
 	    var countdown = mins * 60 * 1000;
-		document.querySelector("div.timer").innerHTML = mins + " : " + "00";
+		var minInit = Math.floor(countdown / (60 * 1000));
+		console.log(mins % 1);
+        var secInit = Math.floor(60*(mins%1));
+		document.querySelector("div.timer").innerHTML = minInit + " : " + secInit;
 	    this.timerId = setInterval(function(){
           countdown -= 1000;
           var min = Math.floor(countdown / (60 * 1000));
@@ -165,7 +174,6 @@
           
           if (countdown <= 0) {
              stop();
-			 alert("Time Is Up");
              clearInterval(timerId);
           } else {
              document.querySelector("div.timer").innerHTML = min + " : " + sec;
@@ -177,7 +185,7 @@
   
   <body>
     <div class="content">
-      <h2>BINAURAL BEATS</h2>
+      <h2>BINAURAL FOCUS</h2>
     
       <div class="slidecontainer">
 	    <table>
