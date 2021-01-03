@@ -3,53 +3,8 @@
   <link rel="icon" type="image/png" href="favicon.ico">
   <head>
     <title>binauralfocus</title>
-    <style>
-	
-	  body {
-	    background-color: #2C3E50;
-		font-family: courier;
-		color: #FDFEFE;
-	  }
-	  
-      div.content {
-  	    margin-left: 25%;
-	    margin-right: 20%;
-	    margin-top: 10%;
-  	    width: 50%;
-      }
-	  
-	  div h2 {
-	    margin-left: 15%;
-		font-size: 50px;
-	  }
-	  
-	  div.slidecontainer {
-	    margin-top: 2%;
-	    margin-left: 27%;
-	    margin-right: 20%;
-	  }
-	  
-	  div.controlbar {
-	    margin-top: 2%;
-		margin-left: 22%
-	  }
-	  
-	  div.stopbar {
-	    margin-top: 2%;
-		margin-left: 44%;
-		display: none;
-	  }
-	  
-	  div.timer {
-		margin-top: 5%;
-		margin-left: 32%;
-		font-size: 50px;
-	  }
-	  
-	  tr.spaceUnder>td {
-        padding-bottom: 1em;
-      }
-    </style>
+    <link rel="stylesheet" media="screen and (color)" href="browser.css" />
+	<link rel="stylesheet" media="handheld, only screen and (max-device-width: 800px)" href="mobile.css" />
 	<script>
 	  
 	  var playing = false;
@@ -129,10 +84,10 @@
 	  
 	  function updateText(oscNum) {
 	    if (oscNum === 1) {
-		  document.querySelector("div.frequencyText1").innerHTML = this.osc1Freq + " Hz";
+		  document.getElementById("frequencyText1").innerHTML = this.osc1Freq + " Hz";
 		  return;
 		} else {
-		  document.querySelector('div.frequencyText2').innerHTML = this.osc2Freq + " Hz";
+		  document.getElementById('frequencyText2').innerHTML = this.osc2Freq + " Hz";
 		  return;
 		}
 	  }
@@ -198,7 +153,7 @@
 						class="slider" 
 						id="freq1" 
 						onchange="updateFrequency(this.value, 1)"></td>
-		    <td><div class="frequencyText1">440 Hz</div></td>
+		    <td><div id="frequencyText1" class="frequencytext">440 Hz</div></td>
 		  </tr>
 		  <tr class="spaceUnder">
             <td><label for="freq2">Freq 2 </label></td>
@@ -209,7 +164,7 @@
 						class="slider" 
 						id="freq2" 
 						onchange="updateFrequency(this.value, 2)"></td>
-		    <td><div class="frequencyText2">447 Hz</div></td>
+		    <td><div id="frequencyText2" class="frequencytext">447 Hz</div></td>
 		  </tr>
 		  <tr class="spaceUnder">
 	        <td><label for="volumeSlider">Volume </label></td>
