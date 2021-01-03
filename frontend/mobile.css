@@ -5,32 +5,28 @@ body {
 }
  
 div.content {
-  margin-left: 9%;
-  margin-top: 20%;
+  margin-left: 3%;
+  margin-top: 10%;
 }
  
 div h2 {
-  margin-left: 10%;
+  margin-left: 20%;
   font-size: 80px;
   white-space:nowrap;
 }
  
 div.slidecontainer {
   margin-top: 2%;
-  margin-left: 20%;
+  margin-left: 10%;
   margin-right: 8%;
   font-size: 30px
 }
  
 div.controlbar {
   margin-top: 2%;
-  margin-left: 35%;
+  margin-left: 45%;
   white-space:nowrap;
   font-size: 30px
-}
-
-input[type="range"] {
-  width:450px;
 }
 
 input[type="number"] {
@@ -40,7 +36,7 @@ input[type="number"] {
  
 div.stopbar {
   margin-top: 2%;
-  margin-left: 70%;
+  margin-left: 80%;
   display: none;
 }
 
@@ -50,13 +46,13 @@ div.frequencytext {
  
 div.timer {
   margin-top: 5%;
-  margin-left: 45%;
+  margin-left: 55%;
   font-size: 80px;
   white-space: nowrap;
 }
  
 tr.spaceUnder>td {
-  padding-bottom: 1em;
+  padding-bottom: 75px;
 }
 
 button {
@@ -76,7 +72,7 @@ input[type="range"] {
 
 input[type="range"] {
   -webkit-appearance: none;
-  width: 300px;
+  width: 550px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -98,23 +94,23 @@ input[type="range"]::-ms-track {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 36px;
-  width: 36px;
+  height: 48px;
+  width: 48px;
   background: #555;
   cursor: pointer;
   margin-top: -12px;
 }
 
 input[type="range"]::-moz-range-thumb {
-  height: 36px;
-  width: 36px;
+  height: 48px;
+  width: 48px;
   background: #555;
   cursor: pointer;
 }
 
 input[type="range"]::-ms-thumb {
-  height: 36px;
-  width: 36px;
+  height: 48px;
+  width: 48px;
   background: #555;
   cursor: pointer;
 }
@@ -122,7 +118,7 @@ input[type="range"]::-ms-thumb {
 
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 12px;
+  height: 16px;
   cursor: pointer;
   background: #ccc;
 }
@@ -133,14 +129,14 @@ input[type="range"]:active::-webkit-slider-runnable-track {
 
 input[type="range"]::-moz-range-track {
   width: 100%;
-  height: 12px;
+  height: 16px;
   cursor: pointer;
   background: #ccc;
 }
 
 input[type="range"]::-ms-track {
   width: 100%;
-  height: 12px;
+  height: 16px;
   cursor: pointer;
   background: transparent;
   border-color: transparent;
