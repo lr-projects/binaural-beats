@@ -22,7 +22,7 @@
 						value="440" 
 						class="slider" 
 						id="freq1" 
-						onchange="updateFrequency(this.value, 1)"></td>
+						oninput="updateFrequency(this.value, 1)"></td>
 		    <td><div id="frequencyText1" class="frequencytext">440 Hz</div></td>
 		  </tr>
 		  <tr class="spaceUnder">
@@ -33,7 +33,7 @@
 						value="447" 
 						class="slider" 
 						id="freq2" 
-						onchange="updateFrequency(this.value, 2)"></td>
+						oninput="updateFrequency(this.value, 2)"></td>
 		    <td><div id="frequencyText2" class="frequencytext">447 Hz</div></td>
 		  </tr>
 		  <tr class="spaceUnder">
@@ -44,7 +44,7 @@
 						value="50" 
 						class="volumeSlider" 
 						id="volumeSlider"
-						onChange="updateVolume(this.value)"></td>
+						onInput="updateVolume(this.value)"></td>
 		  </tr>
 		</table>
 	  </div>
