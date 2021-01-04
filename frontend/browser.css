@@ -42,3 +42,9 @@ div.timer {
 tr.spaceUnder>td {
   padding-bottom: 1em;
 }
+
+button {
+  text-align: center;
+  font-size: 15px;
+  font-family: courier;
+}

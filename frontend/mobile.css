@@ -58,6 +58,7 @@ tr.spaceUnder>td {
 button {
   text-align: center;
   font-size: 30px;
+  font-family: courier;
 }
 
 /* experimental below from webpage */
