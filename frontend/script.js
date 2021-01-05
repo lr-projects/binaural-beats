@@ -101,7 +101,7 @@ function updateVolume(newVolume) {
 	var newVolumeScaled = newVolume / 100;
 	this.volume = newVolumeScaled;
 	if (typeof this.gain !== 'undefined') {
-		this.gain.gain.exponentialRampToValueAtTime(this.volume, context.currentTime + 2);
+		this.gain.gain.linearRampToValueAtTime(this.volume, context.currentTime + 0.2);
 	}
 }
  
