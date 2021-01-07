@@ -33,6 +33,11 @@ input[type="number"] {
   font-size:30px;
   width: 45%
 }
+
+input.frequencytext[type="number"] {
+  font-size:30px;
+  width: 60px
+}
  
 div.stopbar {
   margin-top: 2%;

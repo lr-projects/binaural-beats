@@ -48,3 +48,12 @@ button {
   font-size: 15px;
   font-family: courier;
 }
+
+input.frequencytext[type="number"] {
+  font-size:11px;
+  width: 35%
+}
+
+span.freqContainer {
+	white-space: nowrap;
+}

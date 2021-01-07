@@ -32,7 +32,7 @@
 						class="slider" 
 						id="freq1" 
 						oninput="updateFrequency(this.value, 1)"></td>
-		    <td><div id="frequencyText1" class="frequencytext">440 Hz</div></td>
+		    <td><span class="freqContainer"><input id="frequencyText1" type="number" class="frequencytext" value="440" onChange="updateFrequency(this.value, 1)"> Hz</span></td>
 		  </tr>
 		  <tr class="spaceUnder">
             <td><label for="freq2">Freq 2 </label></td>
@@ -43,7 +43,7 @@
 						class="slider" 
 						id="freq2" 
 						oninput="updateFrequency(this.value, 2)"></td>
-		    <td><div id="frequencyText2" class="frequencytext">447 Hz</div></td>
+		    <td><span class="freqContainer"><input id="frequencyText2" type="number" class="frequencytext" value="447" onChange="updateFrequency(this.value, 2)"> Hz</span></td>
 		  </tr>
 		  <tr class="spaceUnder">
 	        <td><label for="volumeSlider">Volume </label></td>
@@ -58,7 +58,7 @@
 		</table>
 	  </div>
 	  <div class="controlbar" id="controlbar">
-	    <span id="timerWrapper"><label for="timerMins">Minutes </label><input type="number" id="timerMins" value=30></span>
+	    <span id="timerWrapper"><label for="timerMins">Minutes </label><input type="number" class="timerMins" id="timerMins" value=30></span>
 	    <button onclick="start()" id="startButton">Start</button>
 	  </div>
 	  <div class="stopbar" id="stopbar"><button onclick="stop()" id="stopButton">Stop</button></div>

@@ -75,24 +75,43 @@ async function stop() {
  
 function updateText(oscNum) {
 	if (oscNum === 1) {
-		document.getElementById("frequencyText1").innerHTML = this.osc1Freq + " Hz";
+		document.getElementById("frequencyText1").value = this.osc1Freq;
 		return;
 	} else {
-		document.getElementById('frequencyText2').innerHTML = this.osc2Freq + " Hz";
+		document.getElementById('frequencyText2').value = this.osc2Freq;
+		return;
+	}
+}
+
+function updateSlider(oscNum) {
+	if (oscNum === 1) {
+		document.getElementById("freq1").value = this.osc1Freq;
+		return;
+	} else {
+		document.getElementById('freq2').value = this.osc2Freq;
 		return;
 	}
 }
  
 function updateFrequency(newFreq, oscillator) {
+	var correctedFreq = newFreq;
+	if (correctedFreq > 1000) {
+		correctedFreq = 1000;
+	}
+	else if (correctedFreq < 1) {
+		correctedFreq = 1;
+	}
 	if (oscillator === 1) {
-		this.osc1Freq = newFreq
-		if (this.playing === true) this.osc1.frequency.value = newFreq;
+		this.osc1Freq = correctedFreq;
+		if (this.playing === true) this.osc1.frequency.value = correctedFreq;
 		updateText(1);
+		updateSlider(1);
 		return;
 	} else if (oscillator === 2) {
-		this.osc2Freq = newFreq;
-		if (this.playing === true) this.osc2.frequency.value = newFreq;
+		this.osc2Freq = correctedFreq;
+		if (this.playing === true) this.osc2.frequency.value = correctedFreq;
 		updateText(2);
+		updateSlider(2);
 		return;
 	}
 }
@@ -101,7 +120,7 @@ function updateVolume(newVolume) {
 	var newVolumeScaled = newVolume / 100;
 	this.volume = newVolumeScaled;
 	if (typeof this.gain !== 'undefined') {
-		this.gain.gain.linearRampToValueAtTime(this.volume, context.currentTime + 0.2);
+		this.gain.gain.linearRampToValueAtTime(this.volume, context.currentTime + 0.1);
 	}
 }
  
