@@ -49,6 +49,13 @@ button {
   font-family: courier;
 }
 
+button.nonButton {
+  background:none;
+  border:none;
+  color: white;
+  text-decoration: underline
+}
+
 input.frequencytext[type="number"] {
   font-size:11px;
   width: 35%
@@ -56,4 +63,12 @@ input.frequencytext[type="number"] {
 
 span.freqContainer {
 	white-space: nowrap;
+}
+
+div.aboutDiv {
+  font-size: 12px
+}
+
+a:link {
+  color: white
 }

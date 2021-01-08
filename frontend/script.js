@@ -144,3 +144,12 @@ function timer(mins) {
 		}
 	}, 1000);
 }
+
+function toggleAbout() {
+  var x = document.getElementById("aboutDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

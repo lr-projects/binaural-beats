@@ -7,24 +7,25 @@ body {
 div.content {
   margin-left: 3%;
   margin-top: 10%;
+  width: 90%
 }
  
 div h2 {
-  margin-left: 20%;
+  margin-left: 12%;
   font-size: 80px;
   white-space:nowrap;
 }
  
 div.slidecontainer {
   margin-top: 2%;
-  margin-left: 10%;
+  margin-left: 7%;
   margin-right: 8%;
   font-size: 30px
 }
  
 div.controlbar {
   margin-top: 2%;
-  margin-left: 45%;
+  margin-left: 15%;
   white-space:nowrap;
   font-size: 30px
 }
@@ -163,4 +164,13 @@ input[type="range"]::-ms-fill-upper {
 
 input[type="range"]:focus::-ms-fill-upper {
   background: #ddd;
+}
+
+div.aboutDiv {
+  width: auto;
+  font-size: 12px
+}
+
+a:link {
+  color: white
 }
