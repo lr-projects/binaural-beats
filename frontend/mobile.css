@@ -174,3 +174,10 @@ div.aboutDiv {
 a:link {
   color: white
 }
+
+button.nonButton {
+  background:none;
+  border:none;
+  color: white;
+  text-decoration: underline
+}
