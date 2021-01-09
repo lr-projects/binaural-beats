@@ -149,7 +149,9 @@ function toggleAbout() {
   var x = document.getElementById("aboutDiv");
   if (x.style.display === "none") {
     x.style.display = "block";
+	document.getElementById("upDown").innerHTML = "↑";
   } else {
     x.style.display = "none";
+	document.getElementById("upDown").innerHTML = "↓";
   }
 }

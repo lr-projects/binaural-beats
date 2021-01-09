@@ -72,3 +72,7 @@ div.aboutDiv {
 a:link {
   color: white
 }
+
+a:visited {
+  color: gray;
+}
