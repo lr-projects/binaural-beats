@@ -14,17 +14,41 @@ var osc2;
 var timerId;
 
 var volume = 0.5;
+
+var isSafari = false;
  
 function start() {
 	if (this.playing === false) {
-		var context = this.context || new AudioContext();
+		var AudioContext = window.AudioContext // Default
+		|| window.webkitAudioContext // Safari and old versions of Chrome
+		|| false; 
+		
+		if (window.webkitAudioContext) {
+			this.isSafari = true;
+		}
+
+		if (AudioContext) {
+			// Do whatever you want using the Web Audio API
+			var ctx = new AudioContext;
+		} else {
+			// Web Audio API is not supported
+			// Alert the user
+			alert("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox");
+		}
+		
+		var context = this.context || ctx;
 		this.context = context;
 
-		this.panLeftNode = context.createStereoPanner();
-		this.panRightNode = context.createStereoPanner();
+		this.panLeftNode = this.isSafari ? context.createPanner() : context.createStereoPanner();
+		this.panRightNode = this.isSafari ? context.createPanner() : context.createStereoPanner();
   
-		this.panLeftNode.pan.value = -1;
-		this.panRightNode.pan.value = 1;
+		if (isSafari) {
+			panLeftNode.setPosition(1,0,0);
+			panRightNode.setPosition(-1,0,0);
+		} else {
+			this.panLeftNode.pan.value = -1;
+			this.panRightNode.pan.value = 1;
+		}
   
 		this.osc1Freq = document.getElementById("freq1").value;
 		this.osc1 = context.createOscillator();
@@ -149,9 +173,11 @@ function toggleAbout() {
   var x = document.getElementById("aboutDiv");
   if (x.style.display === "none") {
     x.style.display = "block";
-	document.getElementById("upDown").innerHTML = "↑";
+	document.getElementById("up").style.display = "none";
+	document.getElementById("down").style.display = "inline";
   } else {
     x.style.display = "none";
-	document.getElementById("upDown").innerHTML = "↓";
+	document.getElementById("up").style.display = "inline";
+	document.getElementById("down").style.display = "none";
   }
 }
