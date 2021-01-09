@@ -42,7 +42,7 @@ input.frequencytext[type="number"] {
  
 div.stopbar {
   margin-top: 2%;
-  margin-left: 80%;
+  margin-left: 45%;
   display: none;
 }
 
@@ -52,7 +52,7 @@ div.frequencytext {
  
 div.timer {
   margin-top: 5%;
-  margin-left: 55%;
+  margin-left: 32%;
   font-size: 80px;
   white-space: nowrap;
 }
