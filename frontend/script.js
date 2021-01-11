@@ -43,6 +43,8 @@ function start() {
 		this.panRightNode = this.isSafari ? context.createPanner() : context.createStereoPanner();
   
 		if (isSafari) {
+			panLeftNode.panningModel = "equalpower";
+			panRightNode.panningModel = "equalpower";
 			panLeftNode.setPosition(1,0,0);
 			panRightNode.setPosition(-1,0,0);
 		} else {
